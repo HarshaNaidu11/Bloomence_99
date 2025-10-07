@@ -1,0 +1,116 @@
+/* frontend/src/pages/Dashboard/Dashboard.css */
+
+.dashboard-container {
+  padding: 4rem 3rem;
+  background-color: #0d1a26; /* Dark background from your App.css */
+  min-height: 100vh;
+  color: #f0f8ff;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.dashboard-container h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+  color: #00d9a5; /* Primary accent color */
+}
+
+.top-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 2.5rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap; /* Wrap on small screens */
+}
+
+/* --- General Chart Card Style --- */
+.chart-card {
+  background: #1c2b3a; /* Dark card background */
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.chart-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #f0f8ff;
+}
+
+.chart-subtitle {
+    color: #a0a8b4;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* --- Legend Box (Top Left) --- */
+.legend-box {
+    flex: 0 0 35%; /* Fixed width for the legend */
+    max-width: 400px;
+    padding: 1.5rem;
+    background: #1c2b3a;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    text-align: left;
+}
+
+.legend-box h4 {
+    color: #00d9a5;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 0.5rem;
+}
+
+.legend-item {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 0.3rem;
+    color: #a0a8b4;
+}
+
+/* Custom Tooltip */
+.custom-tooltip {
+  background-color: #1c2b3a;
+  border: 1px solid #334155;
+  padding: 10px;
+  border-radius: 5px;
+  opacity: 0.95;
+}
+.custom-tooltip p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* --- Pie Chart (Top Right) --- */
+.pie-chart-card {
+    flex-grow: 1; /* Allows it to take up the remaining space */
+    min-width: 350px;
+}
+
+/* --- Bar Chart (Bottom Full Width) --- */
+.bar-chart-card {
+    width: 100%;
+}
+
+/* Media Query for responsiveness */
+@media (max-width: 1000px) {
+  .top-section {
+    flex-direction: column;
+    align-items: center;
+  }
+  .legend-box, .pie-chart-card {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* Adjust Recharts inner labels/grid for dark mode */
+.recharts-cartesian-axis-line,
+.recharts-yAxis .recharts-label {
+    stroke: #888;
+}
+.recharts-text, .recharts-legend-item-text {
+    fill: #f0f8ff !important;
+}

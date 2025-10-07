@@ -1,0 +1,23 @@
+ /* npm create vite@latest .    for to install the react.js */ 
+ /*   framework used  react.js  */
+/* variant used javascript */
+
+ /* npm install to install the node modules */
+ /* npm run dev to start the server */
+
+ /*  npm install tailwindcss @tailwindcss/vite  to install the tailwind css */
+
+ /* npm install react-router-dom@latest  to install the react router dom */
+
+ /* To check the version of node : node -v */
+ /* To check the version of npm : npm -v */
+
+ /* npm list react-router-dom  to check the version of react-router-dom */
+
+ /* npm install gsap : GSAP (GreenSock Animation Platform) is a JavaScript animation library.
+It lets you create smooth, high-performance animations for text, images, SVGs, and other DOM elements. */
+
+/* npm install lucide-react for icons import directly */
+/* npm install framer-motion  for animations */
+
+/* npm install recharts */

@@ -1,0 +1,112 @@
+/* General Body Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #051519;
+  color: #f0f0f0;
+  overflow-x: hidden;
+}
+
+/* Header and Navigation Bar */
+.header {
+  width: 100%;
+  padding: 20px 5%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 35px;
+}
+
+.nav-menu li a {
+  text-decoration: none;
+  color: #e0e0e0;
+  font-size: 0.9rem;
+  font-weight: 400;
+  text-transform: capitalize;
+  transition: color 0.3s ease;
+}
+
+.nav-menu li a:hover {
+  color: #00d9a5;
+}
+
+.btn-get-started {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #00d9a5;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-weight: 700;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.btn-get-started:hover {
+  background-color: #00c795;
+  transform: scale(1.05);
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  padding: 100px 20px 20px;
+}
+
+.hero-content {
+  max-width: 850px;
+}
+
+.hero-content h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.hero-content p {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  color: #c0c0c0;
+  max-width: 650px;
+  line-height: 1.6;
+  margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .nav-menu {
+    display: none;
+  }
+}
