@@ -1,6 +1,7 @@
 .questionnaires-container {
   text-align: center;
   padding: 2rem;
+  font-size: 30px;
   color: white;
 }
 
@@ -15,7 +16,7 @@
   background-color: #1e293b; /* dark blue */
   border-radius: 12px;
   padding: 2rem;
-  width: 250px;
+  width: 300px;
   height: 200px;
   cursor: pointer;
   transition: transform 0.2s, background 0.3s;
@@ -31,7 +32,7 @@
 
 .card h2 {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 30px;
 }
 
 .card p {

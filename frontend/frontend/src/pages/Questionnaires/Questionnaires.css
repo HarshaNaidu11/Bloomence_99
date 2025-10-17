@@ -1,0 +1,40 @@
+.questionnaires-container {
+  text-align: center;
+  padding: 2rem;
+  color: white;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background-color: #1e293b; /* dark blue */
+  border-radius: 12px;
+  padding: 2rem;
+  width: 250px;
+  height: 200px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  background-color: #334155;
+}
+
+.card h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.card p {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}

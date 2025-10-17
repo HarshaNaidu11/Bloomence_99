@@ -2,7 +2,7 @@
 
 .dashboard-container {
   padding: 4rem 3rem;
-  background-color: #0d1a26; /* Dark background from your App.css */
+  background-color: #0d1a26; 
   min-height: 100vh;
   color: #f0f8ff;
   font-family: 'Montserrat', sans-serif;
@@ -12,29 +12,131 @@
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 2.5rem;
-  color: #00d9a5; /* Primary accent color */
+  color: #00d9a5; 
 }
 
-.top-section {
+/* --- Metrics Row (Top Cards) --- */
+.metrics-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.metric-card {
+    flex: 1;
+    min-width: 200px;
+    background: #1c2b3a; 
+    border-radius: 8px;
+    padding: 1.2rem 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    border-left: 5px solid; 
+    text-align: left;
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.metric-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.metric-title {
+    font-size: 0.9rem;
+    color: #a0a8b4;
+    font-weight: 500;
+}
+
+.metric-score {
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.metric-footer {
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+    align-items: center;
+    font-size: 0.85rem; 
+    color: #a0a8b4;
+    margin-top: 10px; 
+}
+
+.metric-trend {
+    font-weight: bold;
+}
+
+/* --- Main Chart Rows --- */
+.charts-area {
+    width: 100%;
+}
+
+.charts-row {
   display: flex;
   justify-content: space-between;
   gap: 2.5rem;
   margin-bottom: 2.5rem;
-  flex-wrap: wrap; /* Wrap on small screens */
+  flex-wrap: wrap;
+  align-items: stretch; 
+}
+
+/* --- Legend Box (Top Left) --- */
+.legend-box-card {
+    flex: 1; 
+    min-width: 300px; 
+    padding: 1.5rem;
+    background: #1c2b3a;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    text-align: left; 
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+}
+
+.legend-box-card h4 {
+    color: #00d9a5;
+    margin-bottom: 1.5rem; 
+    font-size: 1.4rem; 
+    border-bottom: 1px solid #334155;
+    padding-bottom: 0.5rem;
+    text-align: center; 
+}
+
+.legend-content {
+    flex-grow: 1; 
+    list-style: none; 
+    padding-left: 0; 
+    margin-top: 0;
+    padding: 0 20px; 
+}
+
+.legend-item {
+    font-size: 1.1rem; 
+    line-height: 1.8; 
+    margin-bottom: 0.5rem;
+    color: #f0f8ff; 
+    text-align: left; 
 }
 
 /* --- General Chart Card Style --- */
 .chart-card {
-  background: #1c2b3a; /* Dark card background */
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    background: #1c2b3a; 
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
 .chart-card h3 {
   font-size: 1.3rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   color: #f0f8ff;
+  text-align: center;
 }
 
 .chart-subtitle {
@@ -44,30 +146,20 @@
     text-align: center;
 }
 
-/* --- Legend Box (Top Left) --- */
-.legend-box {
-    flex: 0 0 35%; /* Fixed width for the legend */
-    max-width: 400px;
-    padding: 1.5rem;
-    background: #1c2b3a;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-    text-align: left;
+/* --- Pie Chart (Top Right) --- */
+.pie-chart-card {
+    flex: 1; 
+    min-width: 350px;
+    display: flex; 
+    flex-direction: column; 
+}
+.pie-chart-card .recharts-responsive-container {
+    flex-grow: 1; 
 }
 
-.legend-box h4 {
-    color: #00d9a5;
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-    border-bottom: 1px solid #334155;
-    padding-bottom: 0.5rem;
-}
-
-.legend-item {
-    font-size: 0.9rem;
-    line-height: 1.4;
-    margin-bottom: 0.3rem;
-    color: #a0a8b4;
+/* --- Bar Chart (Middle Full Width) --- */
+.bar-chart-card {
+    width: 100%;
 }
 
 /* Custom Tooltip */
@@ -77,40 +169,163 @@
   padding: 10px;
   border-radius: 5px;
   opacity: 0.95;
+  font-size: 0.9rem;
 }
 .custom-tooltip p {
     margin: 0;
-    font-size: 0.9rem;
+    line-height: 1.3;
 }
 
-/* --- Pie Chart (Top Right) --- */
-.pie-chart-card {
-    flex-grow: 1; /* Allows it to take up the remaining space */
-    min-width: 350px;
-}
-
-/* --- Bar Chart (Bottom Full Width) --- */
-.bar-chart-card {
-    width: 100%;
-}
-
-/* Media Query for responsiveness */
-@media (max-width: 1000px) {
-  .top-section {
-    flex-direction: column;
-    align-items: center;
-  }
-  .legend-box, .pie-chart-card {
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
-}
 
 /* Adjust Recharts inner labels/grid for dark mode */
-.recharts-cartesian-axis-line,
-.recharts-yAxis .recharts-label {
-    stroke: #888;
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+    stroke: #334155; 
 }
 .recharts-text, .recharts-legend-item-text {
     fill: #f0f8ff !important;
+}
+.recharts-cartesian-axis-tick-value {
+    fill: #a0a8b4;
+}
+
+/* 🟢 NEW STYLES FOR WELLNESS TARGETS SECTION */
+.wellness-target-section {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background: #1c2b3a; 
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.wellness-target-section h2 {
+    font-size: 1.8rem;
+    color: #00d9a5; 
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.wellness-target-cards-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around; 
+}
+
+.wellness-target-card {
+    flex: 1; 
+    min-width: 220px; 
+    max-width: 280px; 
+    background: #2a3d54; 
+    border-radius: 8px;
+    padding: 1.2rem 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.target-progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.target-percentage {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.target-progress-bar-container {
+    flex-grow: 1; 
+    height: 8px; 
+    background-color: #334155; 
+    border-radius: 4px;
+    margin-left: 15px; 
+    overflow: hidden; 
+}
+
+.target-progress-bar {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.5s ease-out; 
+}
+
+.target-title {
+    font-size: 1.1rem;
+    color: #f0f8ff;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+/* 🟢 NEW STYLES FOR RECOMMENDATION BUTTON WRAPPER */
+.recommendation-button-wrapper {
+    width: 100%;
+    /* CRITICAL FIX: Ensures button is centered and uses margin */
+    text-align: center; 
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+.recommendation-button-wrapper .btn-primary {
+    /* CRITICAL FIX: Make button inline-block so margin auto can center it */
+    display: inline-block; 
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s;
+}
+.recommendation-button-wrapper .btn-primary:hover {
+    background-color: #3385ff !important; 
+}
+
+
+/* Media Query for responsiveness */
+@media (max-width: 1100px) {
+  .metrics-row {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 800px) {
+  .charts-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .legend-box-card, .pie-chart-card {
+    flex: none; 
+    width: 100%; 
+    max-width: 100%;
+    height: auto; 
+    min-height: unset;
+    justify-content: flex-start;
+  }
+  .metrics-row {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .metric-card {
+    min-width: 150px;
+    flex: 1 1 40%;
+  }
+  .dashboard-container {
+      padding: 2rem 1rem;
+  }
+
+  /* Responsive adjustments for wellness target cards */
+  .wellness-target-cards-row {
+      flex-direction: column;
+      align-items: center;
+  }
+  .wellness-target-card {
+      min-width: unset;
+      width: 100%;
+      max-width: 350px; 
+  }
 }

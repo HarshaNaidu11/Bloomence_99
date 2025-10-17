@@ -1,5 +1,18 @@
-/* General Body Styles */
+/* =========================================
+   🌍 GLOBAL BASE STYLES
+   ========================================= */
+
+/* Reset & Base */
 * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  min-height: 100vh;
+  width: 100%;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -7,19 +20,30 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
-  background-color: #051519;
+  background-color: #01130d; /* Main background color */
   color: #f0f0f0;
   overflow-x: hidden;
 }
 
-/* Header and Navigation Bar */
+/* Ensures full-page structure */
+.homepage-body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  height: auto; /* Allows vertical expansion */
+}
+
+/* =========================================
+   🧭 HEADER & NAVIGATION
+   ========================================= */
+
 .header {
   width: 100%;
   padding: 20px 5%;
-  position: absolute;
+  position: absolute; /* Sits over hero section */
   top: 0;
   left: 0;
-  z-index: 10;
+  z-index: 100; /* Keeps header above all */
 }
 
 .navbar {
@@ -73,25 +97,40 @@ body {
   transform: scale(1.05);
 }
 
-/* Hero Section */
+/* =========================================
+   🌅 HERO SECTION
+   ========================================= */
+
 .hero-section {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  min-height: 100vh;
-  padding: 100px 20px 20px;
+
+  /* Ensures full viewport height */
+  min-height: 100dvh;
+
+  /* Background & layout context */
+  position: relative; /* Context for LightRays or overlay */
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
 }
 
 .hero-content {
   max-width: 850px;
+  position: relative; /* Keeps above background elements */
+  z-index: 5;
+
+  /* Balanced spacing */
+  padding: 120px 20px 40px 20px; /* top space for fixed header */
 }
 
 .hero-content h1 {
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-size: clamp(2.5rem, 6vw, 2.8rem);
   font-weight: 900;
   line-height: 1.2;
-  margin-bottom: 20px;
+  margin-bottom: 1.2rem;
   text-transform: uppercase;
   color: #ffffff;
 }
@@ -104,9 +143,28 @@ body {
   margin: 0 auto;
 }
 
-/* Responsive */
+/* =========================================
+   📱 RESPONSIVE ADJUSTMENTS
+   ========================================= */
+
 @media (max-width: 992px) {
   .nav-menu {
     display: none;
   }
 }
+
+@media (max-width: 768px) {
+  .hero-content {
+    padding-top: 100px;
+    padding-bottom: 30px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+  }
+
+  .hero-content p {
+    font-size: 0.95rem;
+  }
+}
+

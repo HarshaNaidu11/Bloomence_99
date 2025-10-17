@@ -1,0 +1,251 @@
+/* src/pages/Questionnaires/PHQ9.css */
+
+/* --- OUTER WRAPPER: Ensures the card is centered and contains buttons below it --- */
+.phq9-wrapper {
+    /* Centers the entire questionnaire block on the screen */
+    margin: 40px auto; 
+    max-width: 420px; 
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- Container and Layout (The White Card) --- */
+.phq9-container {
+  /* 🟢 Final Fixed Size */
+  max-width: 420px; 
+  margin: 0 0 20px 0; 
+  background: #ffffff;
+  /* Reduced padding for a tighter fit */
+  padding: 20px 0 65px 0; 
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+  position: relative;
+  overflow: hidden; 
+}
+
+.phq9-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  /* Reduced font size for compact look */
+  font-size: 1.6rem;
+}
+
+/* Introduction Text Style */
+.intro-text {
+  text-align: center;
+  margin-bottom: 20px;
+  /* Reduced font size for compact look */
+  font-size: 0.9rem;
+  font-weight: bold; 
+  color: #555; 
+  /* Reduced padding */
+  padding: 0 20px; 
+}
+
+/* Progress and Question Display */
+.progress-tracker {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.question-card {
+  /* Reduced padding */
+  padding: 15px 20px; 
+  border: none;
+  border-radius: 10px;
+  background: #fafafa;
+  /* Aligns card content area with navigation buttons */
+  margin: 0 20px 15px 20px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.question-text {
+  /* Reduced font size */
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+/* Options/Answer Buttons */
+.options {
+  display: flex;
+  flex-direction: column; 
+  /* Reduced gap */
+  gap: 8px;
+}
+
+.option-button {
+  background: #f0f0f0;
+  color: #333;
+  /* Reduced padding */
+  padding: 10px 15px;
+  border: none; 
+  border-radius: 6px; 
+  cursor: pointer;
+  transition: all 0.2s ease;
+  /* Reduced font size */
+  font-size: 0.95rem; 
+  width: 100%;
+  
+  /* CRITICAL: Ensure text is left-aligned */
+  justify-content: flex-start; 
+  align-items: center;
+  display: flex; 
+}
+
+.option-button:hover {
+  background: #e9e9e9;
+}
+
+.option-button.selected {
+  background: #e0e0e0; 
+  color: #333; 
+  border: none;
+  font-weight: 500; 
+  box-shadow: none;
+}
+
+/* Pure CSS Radio Circle Indicator (Styles remain the same) */
+.option-indicator {
+    height: 18px; 
+    width: 18px; 
+    margin-right: 15px; 
+    margin-left: 0; /* Resetting any negative margin */
+    border: 1px solid #aaa; 
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    flex-shrink: 0; 
+}
+
+.option-indicator::after {
+    content: '';
+    display: block;
+    height: 9px;
+    width: 9px;
+    border-radius: 50%;
+    background: transparent; 
+    transition: background 0.2s ease;
+}
+
+.option-button.selected .option-indicator {
+    border-color: #0d47a1;
+}
+
+.option-button.selected .option-indicator::after {
+    background: #0d47a1;
+}
+
+.option-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* --- NAVIGATION CONTROLS OUTSIDE CONTAINER (ABSOLUTE PLACEMENT) --- */
+.navigation-controls-outside {
+    /* Positions buttons at the bottom of the card */
+    position: absolute; 
+    bottom: 20px; 
+    left: 0;
+    right: 0;
+    
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    
+    /* Padding ensures the buttons are pushed inward from the container edge */
+    padding: 0 20px 20px 20px; 
+    box-sizing: border-box;
+    max-width: 100%;
+    z-index: 10;
+}
+
+.nav-btn {
+    padding: 8px 15px;
+    border: none; 
+    border-radius: 6px;
+    cursor: pointer;
+    background: #f0f0f0; 
+    color: #555;
+    transition: 0.2s;
+    
+    width: 48%; 
+    font-weight: 500;
+    box-sizing: border-box; 
+    
+    /* Ensures text is centered */
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); 
+}
+
+.nav-btn:hover:not(:disabled) {
+    background: #e0e0e0;
+}
+
+.nav-btn:disabled {
+    color: #ccc;
+    cursor: not-allowed;
+    background: #fafafa;
+    box-shadow: none;
+}
+/* --------------------------------------------------- */
+
+/* Submission and Result Styling (Unchanged) */
+.submit-btn {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  background: #00c853;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background: #00a94d;
+}
+
+.result-box {
+  margin-top: 20px;
+  padding: 25px;
+  text-align: center;
+}
+
+.result-box.success {
+  background: #e8f5e9;
+  border: 1px solid #00c853;
+  border-left: 4px solid #00c853;
+  color: #2e7d32;
+  font-weight: 500;
+  border-radius: 8px;
+}
+
+.loading-message {
+    text-align: center;
+    color: #00c853;
+    margin-top: 15px;
+    font-style: italic;
+}
+
+.error-message {
+    color: #d32f2f;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: 500;
+}
