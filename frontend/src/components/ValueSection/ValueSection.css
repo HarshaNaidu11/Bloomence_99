@@ -42,6 +42,11 @@
     max-width: 900px;
     margin: 0 auto;
     padding-bottom: 4rem; 
+    cursor: pointer;
+   
+}
+.value-card:hover  {
+    zoom: 1.20; 
 }
 
 .value-card {

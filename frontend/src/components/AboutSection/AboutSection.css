@@ -8,6 +8,7 @@
   overflow: hidden; 
   position: relative; 
   
+  
   /* 🟢 CRITICAL FIX: Add a large bottom margin to force the subsequent 
      ValueSection to start much lower, ensuring the heading is clear. */
   margin-bottom: 5rem; 
