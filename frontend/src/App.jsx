@@ -10,7 +10,7 @@ import AIRecommendation from "./pages/AIRecommendation/AIRecommendation";
 import EmergencyContact from "./pages/EmergencyContact/EmergencyContact";
 import PHQ9 from "./pages/Questionnaires/PHQ9";
 import GAD7 from "./pages/Questionnaires/GAD7";
-import LightRays from "./components/LightRays/LightRays"; 
+import LightRays from "./components/Lightrays/Lightrays"; 
 import AboutSection from "./components/AboutSection/AboutSection";
 import ValueSection from "./components/ValueSection/ValueSection"; 
 import TestimonialScroller from "./components/TestimonialScroller/TestimonialScroller"; 
