@@ -442,8 +442,8 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext'; 
 
 // --- CONSTANTS ---
-const BOT_API_URL = 'http://localhost:3001/api/gemini/chat'; 
-const DASHBOARD_API_URL = 'http://localhost:3001/api/results/dashboard';
+const BOT_API_URL = 'https://bloomence-99-backend.onrender.com/api/gemini/chat'; 
+const DASHBOARD_API_URL = 'https://bloomence-99-backend.onrender.com/api/results/dashboard';
 const ACCENT_COLOR = '#00d9a5'; 
 
 // --- HELPER FUNCTION: Generates YouTube Thumbnail URL ---
