@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // 🟢 CRITICAL: Import useNavigate
 import "./Signup.css";
-import { auth, googleProvider } from "../../firebaseConfig"; // NOTE: Path assumption
+import { auth, googleProvider, microsoftProvider, appleProvider } from "../../firebaseConfig";// NOTE: Path assumption
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -29,6 +29,21 @@ const GoogleIcon = () => (
       d="M272 107.7c39.8 0 75.7 13.7 103.9 40.7l77.7-77.7C406.7 24.3 344.7 0 272 0 166.9 0 72.4 56.2 27.1 150l92.5 56.8C141 155.6 201.1 107.7 272 107.7z"
     />
   </svg>
+);
+const MicrosoftIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 71 71">
+    <path fill="#F25022" d="M0 0h33.5v33.5H0z" />
+    <path fill="#7FBA00" d="M37.5 0H71v33.5H37.5z" />
+    <path fill="#00A4EF" d="M0 37.5h33.5V71H0z" />
+    <path fill="#FFB900" d="M37.5 37.5H71V71H37.5z" />
+  </svg>
+);
+
+// 🟢 NEW ICON: Apple Icon
+const AppleIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12.15 1.5c.34.45 0 1.25-.45 1.48C9.55 3.73 7.8 6 7.8 8.9c0 2.2 1.3 4.2 3.1 5.3 1.2.7 2.3.6 2.3-.6 0-.8-1.7-1.4-2.7-1.4-.4 0-.8.1-1 .3-.3.2-.5.5-.6.8-.2.5 0 1.1.5 1.4.6.4 1.5.5 2.1 0 1.4-1.2 3.5-3.3 3.5-6.7 0-3.6-2.5-6.1-5.7-6.1-2 0-3.5 1.1-4.2 2.3C4.8 4.3 4.1 3 3.5 3c-.4 0-.9.2-1.1.6-.2.4-.2.8 0 1.2.6.9 1.6 2.3 1.9 4.3 0 0 .1.6-.3.8-.2.1-1.3.4-2.8-.7-1.1-.8-1.7-1.9-1.7-3.2 0-1.8.8-3.2 1.7-4.1C4.4.9 6.2 0 8.7 0c2.7 0 5 1.2 6.5 3.3.4-.2.5-.5.5-.8 0-.3-.1-.5-.4-.7-.2-.2-.6-.3-.9-.2l-.6.2z"/>
+  </svg>
 );
 
 // Eye Icon (Unchanged)
@@ -93,48 +108,55 @@ export default function SignupLogin() {
     }
   };
 
-  const handleSocialClick = async (provider) => {
-    try {
-      if (provider === "Google") {
-        await signInWithPopup(auth, googleProvider);
-        // 🟢 CRITICAL FIX: Removed alert and added immediate navigation
-        navigate('/'); 
-      } else {
-        alert(`Provider ${provider} not implemented yet`);
-      }
-    } catch (error) {
-      alert("❌ " + error.message);
-    }
-  };
+  const handleSocialClick = async (providerName) => { // Renamed for clarity
+    try {
+      let provider;
+
+      // 🟢 CRITICAL: Map providerName to the imported Firebase provider object
+      if (providerName === "Google") {
+        provider = googleProvider;
+      } else if (providerName === "Microsoft") {
+        provider = microsoftProvider;
+      } else if (providerName === "Apple") {
+        provider = appleProvider;
+      } else {
+        alert(`Provider ${providerName} not supported.`);
+        return;
+      }
+
+      await signInWithPopup(auth, provider);
+      
+      // Navigate on success for all social logins
+      navigate('/'); 
+
+    } catch (error) {
+      alert("❌ " + error.message);
+    }
+  };
 
   return (
     <div className="auth-container">
       <div className="auth-box">
         <h2>{isLogin ? "Log in" : "Sign up"}</h2>
         <p>
-          You’ll get smarter responses and can upload files, images, and more.
+          Sign-Up for free to access all features and stay updated.
         </p>
 
         {!showEmailForm ? (
           <>
             <button
-              className="social-btn google"
-              onClick={() => handleSocialClick("Google")}
-            >
-              <GoogleIcon /> Continue with Google
-            </button>
-            <button
-              className="social-btn microsoft"
-              onClick={() => handleSocialClick("Microsoft")}
-            >
-              Microsoft Account
-            </button>
-            <button
-              className="social-btn apple"
-              onClick={() => handleSocialClick("Apple")}
-            >
-              Apple
-            </button>
+              className="social-btn google"
+              onClick={() => handleSocialClick("Google")}
+            >
+              <GoogleIcon /> Continue with Google
+            </button>
+            <button
+              className="social-btn microsoft"
+              onClick={() => handleSocialClick("Microsoft")}
+            >
+              <MicrosoftIcon /> Microsoft Account 
+            </button>
+           
             <button
               className="social-btn email"
               onClick={() => setShowEmailForm(true)}

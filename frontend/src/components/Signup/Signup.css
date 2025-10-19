@@ -1,27 +1,48 @@
+/* UPDATED CSS for ./Signup.css */
+
 body {
   margin: 0;
   font-family: "Inter", sans-serif;
-  background: #0d0d2b; /* dark blue, almost black */
+  /* REMOVED: background: #0d0d2b; and height: 100vh; from body
+     The background image and full-screen properties will be on .auth-container
+     to ensure correct image scaling. */
   color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  /* Set min-height on body to ensure it spans the viewport if .auth-container is full-screen */
+  min-height: 100vh;
 }
 
 .auth-container {
+  /* ========================================================= */
+  /* 🟢 BACKGROUND IMAGE ADDED HERE */
+  /* Use a placeholder for the image path. Replace 'sign-up-background.jpg' 
+     with the actual path in your project (e.g., /assets/sign-up-background.jpg) */
+  background-image: url("../../assets/signup-image.jpg");
+  background-size: cover; /* Ensures the image covers the whole container */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from tiling */
+
+  /* Make the container fill the viewport */
+  min-height: 100vh;
+  width: 100vw;
+
+  /* Flexbox settings to center the login box */
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  padding: 20px; /* Add some padding for smaller screens */
+  /* ========================================================= */
 }
 
 .auth-box {
-  background: #fff;
+  /* Added a slightly darker, opaque background for better text readability over the image */
+  background: rgba(255, 255, 255, 0.95);
   color: #111;
   padding: 2rem;
   border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4); /* Slightly stronger shadow for contrast */
   max-width: 400px;
   width: 100%;
   text-align: center;
@@ -56,7 +77,7 @@ body {
 
 .social-btn:hover {
   background: #f5f5f5;
-  transform: scale(1.05); /* zoom effect */
+  transform: scale(1.02); /* Adjusted zoom effect to be a bit more subtle */
 }
 
 .social-btn svg {
@@ -101,6 +122,23 @@ body {
   width: 100%;
 }
 
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-wrapper input {
+  padding-right: 40px; /* Make space for the icon */
+}
+
+.eye-icon {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  color: #666;
+}
+
 .btn-primary {
   background: #111;
   color: #fff;
@@ -114,7 +152,28 @@ body {
 
 .btn-primary:hover {
   background: #333;
-  transform: scale(1.05); /* zoom effect */
+  transform: scale(1.02); /* Adjusted zoom effect to be a bit more subtle */
+}
+
+.toggle-text {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  color: #111;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 4px;
+  text-decoration: underline;
+}
+
+.toggle-btn:hover {
+  color: #333;
 }
 
 .footer-links {

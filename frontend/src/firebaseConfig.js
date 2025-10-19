@@ -1,6 +1,6 @@
-// src/firebaseConfig.js
 import { initializeApp } from "firebase/app";
-import { getAuth, GoogleAuthProvider } from "firebase/auth";
+// 🟢 IMPORT: Import the OAuthProvider for Microsoft and Apple
+import { getAuth, GoogleAuthProvider, OAuthProvider } from "firebase/auth";
 
 
 const firebaseConfig = {
@@ -20,5 +20,19 @@ const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 
 export const googleProvider = new GoogleAuthProvider();
+
+// 🟢 NEW PROVIDERS ADDED 
+// 1. Microsoft Provider (using 'microsoft.com' as the provider ID)
+export const microsoftProvider = new OAuthProvider('microsoft.com');
+
+// 2. Apple Provider (using 'apple.com' as the provider ID)
+export const appleProvider = new OAuthProvider('apple.com');
+
+
+// NOTE: If you need to request user details like name or specific permissions 
+// (especially important for Apple), you might need to uncomment and adjust scopes:
+// appleProvider.addScope('email');
+// appleProvider.addScope('name');
+
 
 export default app;
