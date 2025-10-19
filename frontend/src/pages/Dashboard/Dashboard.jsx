@@ -210,7 +210,7 @@ export default function Dashboard() {
       try {
         const idToken = await currentUser.getIdToken();
 
-        const response = await fetch('http://localhost:3001/api/results/dashboard', {
+        const response = await fetch('https://bloomence-99-backend.onrender.com/api/results/dashboard', {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${idToken}`
