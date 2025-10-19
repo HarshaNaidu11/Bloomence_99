@@ -437,7 +437,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import './AiRecommendation.css'; 
+import './AIRecommendation.css'; 
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext'; 
 
