@@ -22,7 +22,7 @@ const mongoURI = process.env.MONGO_URI;
 // ⚠️ WARNING: Change origin to your deployed frontend URL (e.g., https://your-frontend.vercel.app)
 // For now, use the deployed Render URL (e.g., https://your-backend.onrender.com) for development
 // or keep it to 'http://localhost:5173' for local testing.
-app.use(cors({ origin: 'http://localhost:5173' })); 
+app.use(cors({ origin: 'https://bloomenceee.onrender.com' })); 
 app.use(bodyParser.json());
 app.use(express.json());
 
