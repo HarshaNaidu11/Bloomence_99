@@ -1,69 +1,139 @@
-BLOOMENCE: Personalized Digital Wellness Assistant 🧠(https://bloomenceee.onrender.com)
-Bloomence is a modern web application designed to help users track, understand, and improve their mental health using standardized clinical assessments (PHQ-9 and GAD-7) combined with personalized, AI-driven recommendations.
-
-The application uses a secure hybrid architecture, separating Firebase for authentication from a robust Node.js/MongoDB backend for scalable data storage.
-✨ Features
-1.Secure User Authentication: Firebase handles quick and secure sign-up/login (Email/Password & Google OAuth).
-2.Protected Routes: Sensitive sections (Dashboard, Questionnaires) are inaccessible until the user is logged in.
-3.Dual Clinical Assessment: Users complete the PHQ-9 (Depression) and GAD-7 (Anxiety) sequentially in a clean, responsive card format.
-4.Dynamic Data Pipeline: Assessment scores are securely transmitted from the frontend to the Node.js backend using Firebase ID Tokens and stored in MongoDB.
-5.Personalized Dashboard: Visualizes historical scores (Bar Chart) and current mental state (Metric Cards, Pie Chart) using live data filtered by the unique user ID.
-6.AI Wellness Coach (BloomBot): An interactive, embedded AI bot that generates tailored nutritional, sleep, and hormonal advice based on the user's latest PHQ-9/GAD-7 scores.
-7.Engaging UI: Includes modern design elements like smooth animations (Framer Motion, LightRays), dynamic charts (Recharts), and a clean, dark-themed aesthetic.
-
-🛠️ Tech Stack & Architecture
-<img width="874" height="505" alt="image" src="https://github.com/user-attachments/assets/92d0f812-927e-4a8b-83f9-c4fb7b031ddd" />
-
-🚀Getting Started (Local Development)
-Follow these steps to get both the frontend and backend running locally.
-Prerequisites:-
-Node.js (v18+)
-npm or yarn
-A MongoDB Atlas Cluster with a user configured (for database access).
-A Firebase Project with Authentication enabled (Google provider recommended).
-A Gemini API Key and a Firebase Admin SDK JSON Key.
-
-1. Backend Setup (backend directory)
-Navigate to the backend folder:
-<img width="828" height="77" alt="image" src="https://github.com/user-attachments/assets/03ea4a42-0141-4732-81c2-d49a76b41263" />
-
-Install dependencies:
-<img width="825" height="70" alt="image" src="https://github.com/user-attachments/assets/9c7b56fc-af73-4e90-8a8a-2754d579e7df" />
-
-Configure Environment Variables: Create a file named .env in the backend directory:
-
-# backend/.env
-
-# 🛑 Your Gemini API Key
-GEMINI_API_KEY="YOUR_GEMINI_API_KEY"
-
-# 🛑 Your MongoDB Connection String (Replace credentials and db name)
-MONGO_URI="mongodb+srv://<user>:<password>@<cluster-url>/bloomenceDB?retryWrites=true&w=majority"
-
-# IMPORTANT: The Firebase Admin SDK must be read from the environment
-FIREBASE_SERVICE_ACCOUNT_CREDENTIALS="PASTE_YOUR_FULL_ESCAPED_JSON_STRING_HERE"
-(Note: Ensure the JSON content is correctly escaped for the FIREBASE_SERVICE_ACCOUNT_CREDENTIALS variable if using .env locally).
-
-Start the backend server:
-<img width="827" height="134" alt="image" src="https://github.com/user-attachments/assets/b6e054c6-a980-4d31-9888-1c4099456ecf" />
-
-(Verify "MongoDB connected successfully" and "Server running on port 3001" appears.)
-
-2. Frontend Setup (frontend directory)
-Navigate to the frontend folder:
-<img width="847" height="83" alt="image" src="https://github.com/user-attachments/assets/7827378d-7b5f-42ea-8237-449c4774a37a" />
-Install dependencies (including recharts, framer-motion, ogl):
-<img width="860" height="80" alt="image" src="https://github.com/user-attachments/assets/6427846f-cb3f-4e9a-bbfa-18f79259a046" />
-Ensure your src/firebaseConfig.js contains your public Firebase client keys.
-Start the frontend application:
-<img width="873" height="63" alt="image" src="https://github.com/user-attachments/assets/6795b845-713d-4168-b17d-85e3206b2bf9" />
-Open http://localhost:5173 in your browser.
-
-✅ Deployment Checklist
-If deploying to a static host (Render, Vercel), ensure these steps are completed:
-Frontend Root: Set the Root Directory to frontend.
-Frontend Build: Set the Publish Directory to dist.
-Backend Secrets: Define all environment variables (GEMINI_API_KEY, FIREBASE_SERVICE_ACCOUNT_CREDENTIALS) directly in the Render dashboard for the backend service.
-Authorized Domain: Add your deployed URL (https://bloomenceee.onrender.com) to your Firebase Authorized Domains list (Firebase Console > Authentication > Settings).
 
 
+# 🌿 **BLOOMENCE: Personalized Digital Wellness Assistant 🧠**
+**Live Demo:** [https://bloomenceee.onrender.com](https://bloomenceee.onrender.com)
+
+---
+
+<div align="center">
+
+![Node.js](https://img.shields.io/badge/Node.js-18.x-green?logo=node.js)
+![React](https://img.shields.io/badge/React-18-blue?logo=react)
+![Firebase](https://img.shields.io/badge/Firebase-Auth-orange?logo=firebase)
+![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-green?logo=mongodb)
+![Gemini AI](https://img.shields.io/badge/Gemini-AI-blueviolet?logo=google)
+![Render](https://img.shields.io/badge/Hosted%20on-Render-black?logo=render)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+
+</div>
+
+---
+
+Bloomence is a **personalized digital wellness assistant** designed to help users **track, understand, and improve their mental health** through clinical assessments — **PHQ-9 (Depression)** and **GAD-7 (Anxiety)** — combined with **AI-driven wellness insights**.
+
+The app uses a **secure hybrid architecture** combining:
+- **Firebase** → Authentication  
+- **Node.js + MongoDB** → Backend & Data Storage  
+- **Gemini AI** → Personalized mental wellness recommendations  
+
+---
+
+## 📑 **Table of Contents**
+
+- [✨ Features]
+- [🛠️ Tech Stack & Architecture]
+- [🚀 Getting Started (Local Development)]
+  - [⚙️ Backend Setup]
+  - [💻 Frontend Setup]
+- [📜 License](#-license)
+
+---
+
+## ✨ **Features**
+
+1. 🔒 **Secure Authentication**
+   - Firebase handles sign-up/login (Email, Password, Google OAuth).  
+2. 🧭 **Protected Routes**
+   - Dashboard and Questionnaires accessible only for logged-in users.  
+3. 🧩 **Dual Clinical Assessment**
+   - PHQ-9 & GAD-7 with seamless, responsive UI.  
+4. ⚙️ **Dynamic Data Flow**
+   - Secure transmission using Firebase ID tokens to backend.  
+5. 📊 **Personalized Dashboard**
+   - Charts and metrics powered by **Recharts** for real-time progress tracking.  
+6. 🤖 **AI Wellness Coach (BloomBot)**
+   - Personalized recommendations using **Gemini AI**.  
+7. 💫 **Modern, Animated UI**
+   - Built with **Framer Motion**, **OGL**, and a polished dark theme.  
+
+---
+
+## 🛠️ **Tech Stack & Architecture**
+
+**Frontend:** React, Vite, Firebase, Recharts, Framer Motion, OGL  
+**Backend:** Node.js, Express.js, MongoDB, Firebase Admin SDK, Gemini API  
+**Hosting:** Render  
+**Authentication:** Firebase (Email + Google)
+
+
+
+---
+
+## 🚀 **Getting Started (Local Development)**
+
+### 🧩 **Prerequisites**
+
+- Node.js (v18+)
+- npm 
+- MongoDB Atlas cluster
+- Firebase project with Authentication enabled
+- Gemini API key
+- Firebase Admin SDK JSON key
+
+---
+
+## ⚙️ **Backend Setup**
+
+### 1️⃣ Navigate to the backend folder
+```bash
+cd backend
+```
+
+
+### 2️⃣ Install dependencies
+```bash
+npm install
+```
+### 3️⃣ Create .env file inside /backend
+```bash
+PORT=3001
+MONGO_URI="your_mongodb_connection_string"
+FIREBASE_PRIVATE_KEY="your_firebase_private_key"
+GEMINI_API_KEY="your_gemini_api_key"
+
+```
+### 4️⃣ Start the backend server
+```bash
+npm start
+```
+## 💻 Frontend Setup
+
+### 1️⃣ Navigate to frontend folder
+```bash
+cd frontend
+```
+
+
+### 2️⃣ Install dependencies
+```bash
+npm install
+```
+### 3️⃣ Create .env file inside /frontend
+```bash
+VITE_FIREBASE_API_KEY="your_firebase_api_key"
+VITE_FIREBASE_AUTH_DOMAIN="your_firebase_auth_domain"
+VITE_FIREBASE_PROJECT_ID="your_firebase_project_id"
+VITE_FIREBASE_STORAGE_BUCKET="your_firebase_storage_bucket"
+VITE_FIREBASE_MESSAGING_SENDER_ID="your_sender_id"
+VITE_FIREBASE_APP_ID="your_app_id"
+VITE_BACKEND_URL=http://localhost:3001
+
+```
+### 4️⃣ Start the frontend
+```bash
+npm run dev
+```
+---
+**📜 License**
+
+This project is licensed under the MIT License.
