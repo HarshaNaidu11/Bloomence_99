@@ -1,5 +1,19 @@
 /* src/pages/Questionnaires/PHQ9.css */
 
+/* 🎨 FULL PAGE BACKGROUND ADDITION */
+body {
+    background-image: url('../../assets/questionariesimage.jpg'); /* <-- Path relative to the public folder */
+    background-size: cover; /* Ensures the image covers the entire viewport */
+    background-position: center bottom; /* Focuses on the lotus flower part of your image */
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Keeps the background fixed when scrolling */
+    margin: 0; /* Remove default body margin */
+    padding: 0; /* Remove default body padding */
+    min-height: 100vh; /* Ensure body covers full viewport height */
+    overflow-x: hidden; /* Prevent horizontal scroll if image is wider */
+}
+
+
 /* --- OUTER WRAPPER: Ensures the card is centered and contains buttons below it --- */
 .phq9-wrapper {
     /* Centers the entire questionnaire block on the screen */
@@ -9,15 +23,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-    /* 🎨 Background Image Addition (Lotus) */
-    background-image: url('../../assets/questionariesimage.jpg'); /* <-- REPLACE WITH ACTUAL IMAGE PATH */
-    background-size: cover; /* Ensures the image covers the entire wrapper area */
-    background-position: center bottom; /* Focuses on the lotus flower */
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* Keeps the background fixed when scrolling */
-    min-height: 100vh; /* Ensures the wrapper covers the full height of the viewport */
-    width: 100%; /* Ensure full width coverage */
+    /* No background-image here, it's now on the body */
+    /* Remove min-height/width properties that might interfere if body handles full height */
 }
 
 /* --- Container and Layout (The White Card) --- */
