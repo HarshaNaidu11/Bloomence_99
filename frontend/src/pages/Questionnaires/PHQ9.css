@@ -4,15 +4,12 @@
 
 /* --- OUTER WRAPPER: Centers the entire questionnaire --- */
 .phq9-wrapper {
-  margin: 0; /* Remove horizontal margin for full width */
-  width: 100vw; /* Take full viewport width */
-  min-height: 100vh; /* Take full viewport height */
+   margin: 40px auto;
+  max-width: 420px;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* Use padding to create space above the content card */
-  padding-top: 40px; 
   /* Important: Remove any background color from this wrapper */
   background: none; 
 }
