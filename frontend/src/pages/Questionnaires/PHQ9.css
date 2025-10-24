@@ -18,7 +18,7 @@
 }
 .phq9-page {
   /* Replace 'signup-image.jpg' with the actual image name from your assets folder */
-  background-image: url('../../assets/signup-image.jpg'); 
+  background-image: url('../../assets/quesimage.jpg'); 
   background-size: cover; /* Scale image to cover the entire container */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Prevent image repetition */
