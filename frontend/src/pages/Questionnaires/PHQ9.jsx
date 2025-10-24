@@ -138,7 +138,7 @@ export default function PHQ9() {
 
   // --- Questionnaire Screen ---
   return (
-    <div className="phq9-wrapper">
+    <div className="phq9-wrapper phq9-page">
       <div className="phq9-container">
         <h2>PHQ-9 Questionnaire</h2>
 
