@@ -11,7 +11,7 @@
     align-items: center;
     
     /* 🎨 Background Image Addition (Lotus) */
-    background-image: url('/path/to/your/image_321d46.jpg'); /* <-- REPLACE WITH ACTUAL IMAGE PATH */
+    background-image: url('../../assets/questionariesimage.jpg'); /* <-- REPLACE WITH ACTUAL IMAGE PATH */
     background-size: cover; /* Ensures the image covers the entire wrapper area */
     background-position: center bottom; /* Focuses on the lotus flower */
     background-repeat: no-repeat;
