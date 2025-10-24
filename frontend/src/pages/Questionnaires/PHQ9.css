@@ -4,14 +4,26 @@
 
 /* --- OUTER WRAPPER: Centers the entire questionnaire --- */
 .phq9-wrapper {
-  margin: 40px auto;
-  max-width: 420px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+  /* Use full viewport width and height */
+  width: 100vw;
+  min-height: 100vh;
+  
+  /* Apply the background image here */
+  background-image: url('../../assets/signup-image.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 
+  /* Reset original centering/sizing to let it span full screen */
+  margin: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Align content to the top */
+  padding-top: 40px; /* Re-add padding that was removed with margin: 40px auto; */
+}
 /* --- Container and Layout (White Card) --- */
 .phq9-container {
   max-width: 420px;
