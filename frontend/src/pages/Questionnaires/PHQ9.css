@@ -5,8 +5,7 @@
 /* --- OUTER WRAPPER: Centers the entire questionnaire --- */
 .phq9-wrapper {
   /* Use full viewport width and height */
-  width: 100vw;
-  min-height: 100vh;
+  
   
   /* Apply the background image here */
   background-image: url('../../assets/quesimage.jpg'); 
