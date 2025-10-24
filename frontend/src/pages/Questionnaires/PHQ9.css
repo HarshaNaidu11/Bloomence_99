@@ -3,13 +3,9 @@
 =============================================== */
 
 /* --- OUTER WRAPPER: Centers the entire questionnaire --- */
-.phq9-wrapper {
-  /* Use full viewport width and height */
-  
-  
-  /* Apply the background image here */
+.phq9-wrapper {/* Apply the background image here */
   background-image: url('../../assets/quesimage.jpg'); 
-  background-size: cover;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
