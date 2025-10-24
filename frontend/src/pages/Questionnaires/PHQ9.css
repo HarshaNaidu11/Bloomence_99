@@ -3,21 +3,26 @@
 =============================================== */
 
 /* --- OUTER WRAPPER: Centers the entire questionnaire --- */
-.phq9-wrapper {/* Apply the background image here */
-  background-image: url('../../assets/quesimage.jpg'); 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-
-  /* Reset original centering/sizing to let it span full screen */
-  margin: 0;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start; /* Align content to the top */
-  padding-top: 40px; /* Re-add padding that was removed with margin: 40px auto; */
+.phq9-wrapper {
+  margin: 0; /* Remove horizontal margin for full width */
+  width: 100vw; /* Take full viewport width */
+  min-height: 100vh; /* Take full viewport height */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Use padding to create space above the content card */
+  padding-top: 40px; 
+  /* Important: Remove any background color from this wrapper */
+  background: none; 
+}
+.phq9-page {
+  /* Replace 'signup-image.jpg' with the actual image name from your assets folder */
+  background-image: url('../../assets/signup-image.jpg'); 
+  background-size: cover; /* Scale image to cover the entire container */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent image repetition */
+  background-attachment: fixed; /* Optional: Makes the background scroll-independent */
 }
 /* --- Container and Layout (White Card) --- */
 .phq9-container {
