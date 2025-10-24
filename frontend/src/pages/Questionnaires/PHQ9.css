@@ -6,7 +6,7 @@
 .phq9-wrapper {
    width: 100vw; /* Take full viewport width */
   min-height: 100vh;
-   margin: 40px auto;
+  margin: 0 auto;
   max-width: 420px;
   position: relative;
   display: flex;
