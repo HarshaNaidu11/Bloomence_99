@@ -126,7 +126,7 @@ export default function GAD7() {
   }
 
   return (
-    <div className="phq9-wrapper"> 
+    <div className="phq9-wrapper phq9-page"> 
       <div className="phq9-container">
         <h2>GAD-7 Questionnaire</h2>
         
